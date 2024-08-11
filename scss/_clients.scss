@@ -1,0 +1,84 @@
+.clientsModule {
+    padding-top: 90px;
+    padding-bottom: 90px;
+    position: relative;
+
+
+    .content-side {
+
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center
+    }
+
+    .clients-container {
+        padding-left: 90px;
+        padding-top: 48px;
+
+        @media screen and (max-width: 500px) {
+            padding-left: 0px;
+        }
+
+        .clientCard {
+            position: relative;
+            width: 162px;
+            height: 162px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(10, 13, 33, 1);
+            background: linear-gradient(to right, white 1px, transparent 1px) 0 0,
+                linear-gradient(to left, white 1px, transparent 1px) 100% 100%,
+                linear-gradient(to bottom, white 1px, transparent 1px) 0 0,
+                linear-gradient(to top, white 1px, transparent 1px) 100% 100%;
+
+            background-repeat: no-repeat;
+            background-size: 10px 10px;
+
+            &:hover {
+                .icon {
+                    img {
+                        filter: unset;
+                        transform: scale(1);
+
+                    }
+                }
+            }
+
+            .icon {
+                img {
+                    filter: grayscale(100%);
+                    transform: scale(0.8);
+                    transition-property: filter, transform;
+                    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+                    transition-duration: 300ms;
+                    transition-duration: 500ms;
+                }
+            }
+
+            .title {
+                font-size: 24px;
+                font-weight: 700;
+                margin-bottom: 15px;
+            }
+
+            .desc {
+                color: white;
+                width: 80%;
+                text-align: center;
+            }
+
+            &:before {
+                content: "";
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                background-color: rgba(10, 13, 33, 1);
+                z-index: -1;
+            }
+        }
+    }
+}

@@ -1,0 +1,236 @@
+.methdologyModule {
+    padding-top: 90px;
+    padding-bottom: 90px;
+    position: relative;
+    z-index: 1;
+    height: 800px;
+
+    @media screen and (max-width: 500px) {
+        height: auto;
+    }
+
+    &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        background-image: url("/images/left-bg.png");
+        background-position: 0;
+        background-size: cover;
+        height: 800px;
+        width: 400px;
+        left: 0;
+        top: 0;
+        z-index: -1;
+
+        @media screen and (max-width: 500px) {
+            display: none;
+        }
+    }
+
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        background-image: url("/images/elipceRight.png");
+        background-position: 0;
+        background-size: cover;
+        height: 800px;
+        width: 400px;
+        right: 0;
+        top: 30%;
+        z-index: -1;
+
+        @media screen and (max-width: 500px) {
+            display: none;
+        }
+    }
+
+    .content-side {
+        h4 {
+            width: 100%;
+        }
+    }
+
+    .methMapContainer {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        gap: 20px;
+        padding-top: 30px;
+        flex-wrap: wrap;
+
+        @media screen and (max-width: 500px) {
+            justify-content: space-between;
+
+        }
+
+
+        .methmap_item {
+            height: 300px;
+
+
+
+            .meth_card {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+                width: 144px;
+
+                @media screen and (max-width: 500px) {
+                    width: 100%;
+
+                }
+
+
+
+                .icon {
+                    width: 100%;
+                    height: 25%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: relative;
+                    z-index: 1;
+
+
+                    @media screen and (max-width: 500px) {
+                        display: none
+                    }
+
+
+
+
+                    &:before {
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        height: 1px;
+                        width: 80px;
+                        bottom: 30%;
+                        left: 50%;
+                        border-bottom: 1px solid white;
+                        transform-origin: top left;
+                        transform: rotate(90deg);
+                        z-index: -1;
+
+                        @media screen and (max-width: 500px) {
+                            display: none;
+                        }
+                    }
+                }
+
+                .number {
+                    width: 100%;
+                    height: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    .number-circle {
+                        z-index: 2;
+                        border-radius: 100%;
+                        border: 1px solid transparent;
+                        background-image: linear-gradient(91.62deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 100%);
+                        height: 40px;
+                        width: 40px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        color: white;
+                        font-weight: 700;
+                        position: relative;
+
+                        &.with_right_border {
+                            &:before {
+                                content: "";
+                                display: block;
+                                position: absolute;
+                                height: 1px;
+                                width: 120px;
+                                top: 50%;
+                                left: 140%;
+                                border-bottom: 1px solid white;
+                                transform-origin: top left;
+                                transform: rotate(0deg);
+                                z-index: -1;
+
+                                @media screen and (max-width: 500px) {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .desc {
+                    width: 100%;
+                    min-width: 144px;
+                    height: 25%;
+                    display: flex;
+                    align-items: start;
+                    justify-content: center;
+
+                    p {
+                        margin: 0;
+                        color: rgba(87, 141, 245, 1);
+                        font-size: 14px;
+                        font-weight: 700;
+                        width: 100%;
+                        text-align: center;
+
+                        @media screen and (max-width: 500px) {
+                            width: 80%;
+                        }
+                    }
+                }
+
+            }
+
+            @media screen and (max-width: 500px) {
+                height: 100px;
+
+                &:nth-child(odd) {
+                    .meth_card {
+                        .number {
+
+                            .number-circle {
+                                &:before {
+                                    content: "";
+                                    display: block;
+                                    position: absolute;
+                                    height: 1px;
+                                    width: 160px;
+                                    top: 50%;
+                                    left: 140%;
+                                    border-bottom: 1px solid white;
+                                    transform-origin: top left;
+                                    transform: rotate(0deg);
+                                    z-index: -1;
+
+                                }
+                            }
+                        }
+
+                    }
+                }
+
+                &:last-child {
+                    .meth_card {
+                        .number {
+                            .number-circle {
+                                &:before {
+                                    display: none;
+                                }
+                            }
+                        }
+
+                    }
+                }
+
+            }
+        }
+    }
+}

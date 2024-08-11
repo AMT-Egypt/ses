@@ -1,0 +1,34 @@
+Contribution on Git:
+FE workflow
+  master
+    |_beta ==> staging
+      |_testing ==> dev
+        |_development ==> dev
+          |_story
+            |_sub-task
+          |_bug
+          |_task
+    |_release
+
+- Each branch has to be created from its parent branch only.
+- Branch is named exactly as its ticket on Jira.
+- If your sub-task is the first one ,you have to create its parent story branch before you start.
+- Your commit is the same text of the ticket title on Jira.
+- After pushing your branch, create a PR merging to your parent branch, and assign a reviewer. (inProgress ==> codeReview)
+- Send your PR link to your reviewer.
+- The reviewer starts revision. (codeReview ==> codeReview inProgress)
+- If you get approval, merge your branch and DELETE it. (codeReview inProgress ==> ready QA)
+
+================================
+BE workflow
+  master
+    |_staging
+      |_dev
+        |_qa
+
+        Test
+        Test2
+
+
+
+        Test

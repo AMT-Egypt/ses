@@ -1,0 +1,252 @@
+.cart-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+
+    .cart-image {
+        width: 50px;
+    }
+
+    &__details {
+        display: flex;
+        align-items: center;
+
+
+        .price {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .discount {
+                text-decoration: line-through;
+                position: relative;
+                font-size: 14px;
+                color: rgb(146, 11, 11);
+            }
+
+            @media screen and (min-width:600px) {
+                display: none;
+            }
+        }
+    }
+
+    &__image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    &__quantity {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__price {
+        align-items: center;
+        justify-content: center;
+        display: none;
+
+        @media screen and (min-width:600px) {
+            display: flex;
+        }
+    }
+
+    @media screen and (min-width:1024px) {
+
+        flex-direction: row;
+    }
+
+    div {
+        flex: 1;
+
+        .quantity-handler {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 50%;
+
+            div {
+                flex: 1;
+                display: flex;
+                justify-content: center;
+            }
+
+            .quantity {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        .quantity-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+        }
+
+        .cart-item-details {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+
+            span {
+                display: block;
+
+            }
+
+
+
+
+
+            .item-name {
+                font-size: 12px;
+
+            }
+
+            .item-sku {
+
+                font-size: 10px;
+            }
+
+            .item-options {
+
+                font-size: 10px;
+            }
+        }
+    }
+}
+
+.cart-drawer-items {
+    padding: 10px;
+
+    .cart-item {
+        border-bottom: 1px solid rgba(#200122, 0.1);
+
+        &__details {
+            flex: 2;
+
+
+            .price {
+                display: flex;
+
+
+                @media screen and (min-width:600px) {
+                    display: flex;
+                }
+            }
+        }
+
+    }
+
+}
+
+.cart-panel {
+    max-width: 400px;
+    margin: 0 auto;
+
+    .cart-item {
+        border-bottom: 1px solid rgba(#200122, 0.1);
+
+        &__details {
+            flex: 2;
+
+            .price {
+                display: flex;
+
+                @media screen and (min-width:600px) {
+                    display: flex;
+                }
+            }
+        }
+
+    }
+
+}
+
+
+
+.cart-drawer-head {
+    padding: 10px;
+    padding-top: 40px;
+
+    h3 {
+        font-size: 20px;
+        font-weight: 200;
+        text-transform: uppercase;
+    }
+
+}
+
+.cart-drawer {
+    .drawer-content {
+        width: 70vw;
+
+        @media screen and (min-width:768px) {
+            width: 300px;
+        }
+
+        @media screen and (min-width:1024px) {
+            width: 400px;
+        }
+
+    }
+}
+
+
+.cart-drawer-actions {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.announce {
+    border: 1px solid rgba(black, 0.1);
+    padding: 5px;
+    max-width: 700px;
+
+    span {
+        font-size: 16px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-weight: 700;
+        display: block
+    }
+
+    p {
+        font-size: 12px;
+
+
+        &:before {
+            content: "-";
+            padding-inline-end: 5px;
+        }
+    }
+
+    .address_field {
+        .address_field_key {
+            font-weight: 700;
+            padding-bottom: 5px;
+            margin-bottom: 0px;
+        }
+
+        .address_field_value {}
+
+        p {
+            &:before {
+
+                content: "";
+                padding-inline-end: unset;
+            }
+
+
+        }
+    }
+
+
+}

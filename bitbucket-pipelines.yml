@@ -1,0 +1,43 @@
+image: node:16
+
+pipelines:
+ branches:
+  development:
+     - step:
+        caches:
+          - node
+        name: Deploy to devolpment
+        script:
+          - echo "Deploying to development environment"
+          - pipe: atlassian/ssh-run:0.2.2
+            variables:
+              SSH_USER: $SSH_USER
+              SERVER: $SERVER
+              COMMAND: 'cd /home/heba/taawoni-frontend-v2/ && git reset --hard && git stash && git pull origin development --no-commit && npm install && npm install -g env-cmd && npm run build:dev && pm2 restart 0'
+          - echo 'DONE DEVELOPMENT'
+  testing:
+     - step:
+        caches:
+          - node
+        name: Deploy to testing
+        script:
+          - echo "Deploying to testing environment"
+          - pipe: atlassian/ssh-run:0.2.2
+            variables:
+              SSH_USER: $SSH_USER
+              SERVER: $TESTING_SERVER
+              COMMAND: 'cd /home/heba/taawoni-frontend-v2/ && git stash && git pull origin testing && npm install && npm install -g env-cmd && npm run build:test && pm2 restart 0'
+          - echo 'DONE TESTING'
+  master:
+     - step:
+        caches:
+          - node
+        name: Deploy to master
+        script:
+          - echo "Deploying to testing environment"
+          - pipe: atlassian/ssh-run:0.2.2
+            variables:
+              SSH_USER: $SSH_MASTER
+              SERVER: $MASTER_SERVER
+              COMMAND: 'cd /home/FrontPro/taawoni-frontend-v2/ && git stash && git pull origin master && npm install && npm run build:prod && pm2 restart 0'
+          - echo 'DONE master'
