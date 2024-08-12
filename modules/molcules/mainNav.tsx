@@ -26,9 +26,10 @@ export default function MainNav(props: any) {
     setIsOpen(false)
     return router.push({ pathname: route })
   }
-  let [navbarStyle,setNavbarDisplay] = useState("block")
+  let [navbarStyle, setNavbarDisplay] = useState('block')
   return (
     <>
+    {/* SLIDER */}
       <Drawer
         lockBackgroundScroll
         open={isOpen}
@@ -64,11 +65,14 @@ export default function MainNav(props: any) {
           </li>
         </ul>
       </Drawer>
+          {/* SLIDER */}
+
       <nav className="container-fluid nav">
         <div className="container lp-nav-container">
           <div className="row justify-content-between">
             <div className="col-6 col-md-4">
               <div className="logo-bar">
+                {/* Slider Icon */}
                 <div className="drawer-icon">
                   <button type="button" className="lp-nobtn" onClick={toggleDrawer}>
                     <DrawerIcon />
@@ -79,7 +83,8 @@ export default function MainNav(props: any) {
                 </div>
               </div>
             </div>
-            <div className="middle col-md-5">
+            {/* BIG NAV */}
+            <div id='big_nav' className="middle col-md-5">
               <ul className="nav-list">
                 <li>
                   <Link href="/"> Home </Link>
@@ -101,15 +106,16 @@ export default function MainNav(props: any) {
             <div className="col-6 col-md-3">
               <div className="nav-icons">
                 <ul>
-                  <li  className='btn_parent'>
+                  <li className="btn_parent">
                     {' '}
                     <Link href="/contact-us">
-                      <a className="btn-outline btn-hover">Contact Us</a>
+                      <a id='nav_btn' className="btn-outline btn-hover">Contact Us</a>
                     </Link>
                   </li>
                 </ul>
               </div>
             </div>
+            {/* BIG NAV */}
           </div>
         </div>
       </nav>
@@ -134,7 +140,7 @@ export default function MainNav(props: any) {
                 </div>
               </div>
             </div>
-            <div className="middle col-md-5">
+            <div id="list" className="middle col-md-5">
               <ul className="nav-list">
                 <li>
                   <Link href="/"> Home </Link>
@@ -159,7 +165,7 @@ export default function MainNav(props: any) {
                   <li>
                     {' '}
                     <Link href="/contact-us">
-                      <a className="btn-outline btn-hover">Contact Us</a>
+                      <a  className="btn-outline btn-hover">Contact Us</a>
                     </Link>
                   </li>
                 </ul>
