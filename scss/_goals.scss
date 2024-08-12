@@ -62,7 +62,8 @@
 
             background-repeat: no-repeat;
             background-size: 10px 10px;
-
+            width: 100%;
+            min-height: 69vh;
             @media screen and (max-width: 500px) {
                 width: 100%;
             }

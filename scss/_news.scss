@@ -1,94 +1,113 @@
 .newsModule {
-    padding-top: 90px;
-    padding-bottom: 90px;
-    position: relative;
+  padding-top: 90px;
+  padding-bottom: 90px;
+  position: relative;
 
-    &:after {
-        content: "";
-        display: block;
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    background-image: url('/images/news_stroke.png');
+    background-size: contain;
+    width: 290px;
+    height: 69px;
+    top: 20%;
+    right: 5%;
+
+    @media screen and (max-width: 500px) {
+      display: none;
+    }
+  }
+
+  .content-side {
+    h4 {
+      width: 100%;
+
+      @media screen and (max-width: 500px) {
+        br {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .news-container {
+    padding-left: 90px;
+    padding-top: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (max-width: 500px) {
+      padding-left: 0px;
+    }
+
+    .news_card {
+      width: 400px;
+      height: 400px;
+      overflow: hidden;
+      position: relative;
+
+      .img-layer {
+        width: 400px;
+        height: 400px;
+      }
+
+      .overflow-layer {
         position: absolute;
-        background-image: url("/images/news_stroke.png");
-        background-size: contain;
-        width: 290px;
-        height: 69px;
-        top: 20%;
-        right: 5%;
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(114, 114, 114, 0) 55.26%,
+          rgba(0, 0, 0, 0.87) 100%
+        );
+        max-width: 400px;
+        min-height: 400px;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        justify-content: end;
+        gap: 1rem;
+        padding: 1rem;
+        margin-left: 1rem;
+        .content-section {
+          padding: 10px;
 
-        @media screen and (max-width: 500px) {
-            display: none;
+          .icon {
+            margin-bottom: 10px;
+          }
+
+          .title {
+            color: rgba(255, 255, 255, 1);
+            font-weight: 700;
+            font-size: 16px;
+            margin-bottom: 10px;
+          }
+
+          .date {
+            color: rgba(255, 255, 255, 1);
+            font-weight: 400;
+            font-size: 12px;
+            text-transform: uppercase;
+          }
         }
+      }
     }
+  }
+}
+.news_card {
+  width: 400px;
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+  z-index: 9999;
+}
 
-    .content-side {
-        h4 {
-            width: 100%;
-
-            @media screen and (max-width: 500px) {
-                br {
-                    display: none;
-                }
-            }
-
-
-        }
-    }
-
-    .news-container {
-        padding-left: 90px;
-        padding-top: 48px;
-
-        @media screen and (max-width: 500px) {
-            padding-left: 0px;
-        }
-
-        .news_card {
-            width: 400px;
-            height: 400px;
-            overflow: hidden;
-            position: relative;
-
-            .img-layer {
-                width: 400px;
-                height: 400px;
-            }
-
-            .overflow-layer {
-                position: absolute;
-                background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(114, 114, 114, 0) 55.26%, rgba(0, 0, 0, 0.87) 100%);
-                width: 400px;
-                height: 400px;
-                top: 0;
-                left: 0;
-                display: flex;
-                flex-direction: column;
-                justify-content: end;
-
-
-                .content-section {
-                    padding: 10px;
-
-                    .icon {
-                        margin-bottom: 10px;
-                    }
-
-                    .title {
-                        color: rgba(255, 255, 255, 1);
-                        font-weight: 700;
-                        font-size: 16px;
-                        margin-bottom: 10px;
-
-                    }
-
-                    .date {
-                        color: rgba(255, 255, 255, 1);
-                        font-weight: 400;
-                        font-size: 12px;
-                        text-transform: uppercase;
-
-                    }
-                }
-            }
-
-        }
-    }
+// Card
+.img-layer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

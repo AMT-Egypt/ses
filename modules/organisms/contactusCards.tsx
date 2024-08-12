@@ -8,7 +8,7 @@ import ClockBaseIcon from 'modules/icons/clockIcon'
 const ContactCard = ({ icon, title, desc }) => {
   return (
     <div className="contactBox">
-      <div className="icon">{icon}</div>
+      <div  className="icon">{icon}</div>
       <div className="title">
         <span>{title}</span>
       </div>

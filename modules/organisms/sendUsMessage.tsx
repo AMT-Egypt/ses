@@ -4,6 +4,7 @@ import { sendEmail } from 'service/main'
 import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { toast } from 'react-toastify'
+import Answar from './Answar'
 
 export default function SendUsMessageModule() {
   const {
@@ -44,6 +45,7 @@ export default function SendUsMessageModule() {
   }
 
   return (
+    <>
     <div className="container-fluid sendUsMessageModule">
       <div className="sendUsMessageBackground"></div>
       <div className="headContent">
@@ -78,7 +80,7 @@ export default function SendUsMessageModule() {
             </textarea>
           </div>
           <div className="col-md-12">
-            <button type="submit" className="btn-outline btn-hover btn-main-block">
+            <button id='formBtn' type="submit" className="btn-outline btn-hover btn-main-block">
               {' '}
               Send Message
             </button>
@@ -86,5 +88,7 @@ export default function SendUsMessageModule() {
         </div>
       </form>
     </div>
+      <Answar/>
+    </>
   )
 }

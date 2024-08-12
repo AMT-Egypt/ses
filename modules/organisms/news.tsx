@@ -13,21 +13,20 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { FreeMode, Navigation, Thumbs, Zoom } from 'swiper'
 import Image from 'next/image'
 import ShineHeadLine from 'modules/molcules/shineHeadline'
-
+import LogoTest from '../icons/Logo.svg'
 const NewsCard = () => {
   return (
     <div className="news_card">
       <div className="img-layer">
         <Image
-          width="400"
-          height="400"
-          src="https://s3-alpha-sig.figma.com/img/b7b7/64ed/15b73d7cdac031eba9a5754ed39a9ffd?Expires=1711324800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Cq1lyJCQYwpmcrtuTFHzqT6WUuEysDQGXCLDAIBbXDrcYMXC2fzFifZpxDjd1N3zyjGjCnN-6D2TRhtXItnQf51rekfy8wW~W77GjZRV1rNlIDt4IbzBsXB~hyfYMQ8Nkf2i0rSerdXiJIxOQ4cx~5ZXwWnHfRdpaMnAhw7D3BPUH-Hyu7QBOMRlLIXeGdOkws2u-F61fxmJ8xqF1DUOKfcOM2pbvOS26~nN4oLHLEWq80Zo45TcQFPecjR2fnHuHjYbCYAoZtodfhTHlGv97ZDdlaQOJb9N5Dabby6FelfLOyxkJ8oAUTuU7dRqqSDoVeDU6Bf7Tyhn6PIBlm-UWA__"
+          width="300"
+          height="300"
+          src={LogoTest}
         />
       </div>
       <div className="overflow-layer">
         <div className="content-section">
           <div className="icon">
-            {' '}
             <ThreeLinesIcon />
           </div>
           <div className="title">Go Behind the Scenes of Apple’s First iPhone Release</div>

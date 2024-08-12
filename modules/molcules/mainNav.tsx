@@ -26,6 +26,7 @@ export default function MainNav(props: any) {
     setIsOpen(false)
     return router.push({ pathname: route })
   }
+  let [navbarStyle,setNavbarDisplay] = useState("block")
   return (
     <>
       <Drawer
@@ -100,7 +101,7 @@ export default function MainNav(props: any) {
             <div className="col-6 col-md-3">
               <div className="nav-icons">
                 <ul>
-                  <li>
+                  <li  className='btn_parent'>
                     {' '}
                     <Link href="/contact-us">
                       <a className="btn-outline btn-hover">Contact Us</a>
