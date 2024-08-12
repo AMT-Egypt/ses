@@ -7,21 +7,19 @@ import Head from 'next/head'
 import ReactModal from 'react-modal'
 import { Cookies, CookiesProvider } from 'react-cookie'
 
-// If loading a variable font, you don't need to specify the font weight
-
 import 'rc-slider/assets/index.css'
 import 'rc-tooltip/assets/bootstrap.css'
 import 'rc-dropdown/assets/index.css'
-
 import 'react-datepicker/dist/react-datepicker.css'
 import '../scss/style.scss'
 import MainNav from 'modules/molcules/mainNav'
 import FooterModule from 'modules/organisms/footer'
-import { useScroll, useTransform } from 'framer-motion'
+import { useScroll } from 'framer-motion'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
 ReactModal.setAppElement('#__next')
+
 interface IProps extends AppProps {
   cookies?: any
 }
@@ -32,29 +30,32 @@ function MyApp(props: IProps) {
   const isBrowser = typeof window !== 'undefined'
   const [movingUp, setMovingUp] = useState(false)
   const router = useRouter()
+  const mainRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    let dir = router.locale == 'ar' ? 'rtl' : 'ltr'
-    let lang = router.locale == 'ar' ? 'ar' : 'en'
+    const dir = router.locale === 'ar' ? 'rtl' : 'ltr'
+    const lang = router.locale === 'ar' ? 'ar' : 'en'
 
     document.querySelector('html')?.setAttribute('dir', dir)
     document.querySelector('html')?.setAttribute('lang', lang)
   }, [router.locale])
-  const mainRef = useRef()
+
   const { scrollYProgress } = useScroll({
     target: mainRef,
     offset: ['start end', 'end start'],
   })
-  function onWheel(event) {
+
+  const onWheel = (event: React.WheelEvent<HTMLDivElement>) => {
     const THRESHOLD = 10
 
     if (event.deltaY > THRESHOLD) {
       setMovingUp(false)
-    }
-
-    if (event.deltaY < -THRESHOLD) {
+    } else if (event.deltaY < -THRESHOLD) {
       setMovingUp(true)
     }
+
+    // Debugging
+    console.log('Scroll deltaY:', event.deltaY, 'Moving Up:', movingUp)
   }
 
   return (
@@ -64,8 +65,7 @@ function MyApp(props: IProps) {
           name="viewport"
           content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"
         />
-        <meta name="theme-color" content="#fffff" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <meta name="theme-color" content="#ffffff" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="description" content="يجب وضع وصف لمشروع هنا" />
         <link
@@ -93,8 +93,5 @@ export default appWithTranslation(MyApp)
 
 MyApp.getInitialProps = async (appContext: any) => {
   const appProps = await App.getInitialProps(appContext)
-  // Next.js 11 & 12
-  // return { ...appProps, cookies: appContext.ctx.req?.headers.cookie }
-  // Next.js 12 only
   return { ...appProps, cookies: appContext.ctx.req?.cookies }
 }

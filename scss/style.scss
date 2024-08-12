@@ -1015,4 +1015,24 @@ body {
   flex-wrap: wrap;
 }
 
-
+@media screen and (max-width: 1000px) {
+  .contactBox {
+    width: 49% !important;
+    margin-bottom: 18px;
+    position: relative;
+  }
+  .contactBox:nth-child(n) {
+    width: 80%;
+  }
+}
+@media (max-width: 425px) {
+  .contactBox .desc .desc-content span,
+  .contactBox .desc .desc-content a {
+    text-decoration: none;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    display: block !important;
+    color: #578df5 !important;
+    width: 102px !important;
+  }
+}

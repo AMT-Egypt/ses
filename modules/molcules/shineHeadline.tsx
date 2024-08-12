@@ -6,7 +6,6 @@ export default function ShineHeadLine({ text}) {
   let mouseY = useMotionValue(0)
   function onMouseMove({ currentTarget, clientX, clientY }: any) {
     let { left, top } = currentTarget.getBoundingClientRect()
-    console.log(clientX, clientY)
     mouseX.set(clientX - left)
     mouseY.set(clientY - top)
   }
