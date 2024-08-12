@@ -771,14 +771,15 @@ body {
   content: '';
   display: block;
   position: absolute;
-  height: 1px;
-  width: 500px;
-  top: 50%;
-  left: 55%;
+  height: 5px;
+  width: 89px;
+  top: 57%;
+  left: 52.5%;
   border-bottom: 1px solid white;
   transform-origin: top left;
   transform: rotate(0deg);
   z-index: -1;
+  rotate: 90deg;
 }
 .methdologyModule
   .methMapContainer
