@@ -1,3 +1,4 @@
+import ThreeLinesIcon from 'modules/icons/threeLines'
 import React, { useState } from 'react'
 
 export default function Answar() {
@@ -10,14 +11,24 @@ export default function Answar() {
   return (
     <div className="AnswarParent">
       <div className="containerAnswars">
-        <div style={{ textAlign: 'center' }}>FAQS</div>
-        <div className="fingertips">Answar At Your Fingertips</div>
+        <div style={{ textAlign: 'center' }}>
+          <ThreeLinesIcon /> FAQS
+        </div>
+        <div className="fingertips">Answers At Your Fingertips</div>
       </div>
       <div className="Q_A">
         {questionsAndAnswers.map((item, index) => (
           <div key={index} className="titleAnswar" onClick={() => handleClick(index)}>
-            {item.question}
-            <span style={{ fontSize: '20px' }}>{openIndex === index ? '-' : '+'}</span>
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+              }}
+            >
+              {item.question}
+              <span style={{ fontSize: '20px' }}>{openIndex === index ? '-' : '+'}</span>
+            </div>
             {openIndex === index && <div className="p">{item.answer}</div>}
           </div>
         ))}

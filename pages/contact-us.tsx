@@ -16,7 +16,6 @@ const ContactUs: any = (props: any) => {
         <InnerPageHead title="Contact Us" />
         <GetCloseContactUsModule />
         <ContactUsBoxesModule />
-        <ContactUsMapModule />
         <SendUsMessageModule />
       </div>
     </>

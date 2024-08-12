@@ -589,9 +589,9 @@ body {
 }
 
 .contactBox {
-  width: 300px;
+  width: 23.5%;
   height: 300px;
-  border: 2px solid rgba(87, 141, 245, 1);
+  border: 2px solid #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -599,20 +599,13 @@ body {
   padding: 20px;
   position: relative;
 
-  @media screen and (max-width: 500px) {
-    width: 100%;
+  @media screen and (max-width: 1000px) {
+    width: 48% !important;
     margin-bottom: 20px;
   }
 
   > div {
     width: 100%;
-  }
-
-  .icon {
-    height: 40%;
-    position: absolute;
-    top: 10%;
-    left: 13%;
   }
 
   .title {
@@ -712,22 +705,16 @@ body {
   .headContent {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
     margin-bottom: 50px;
     z-index: 1;
-    width: auto;
 
     h4 {
-      width: 60%;
-      text-align: center;
+      text-align: start !important;
       font-size: 39px;
     }
 
     p {
-      width: 60%;
-      text-align: center;
+      text-align: start !important;
     }
   }
 
@@ -865,7 +852,7 @@ body {
 
 // Answar.tsx Style
 .AnswarParent {
-  height: 100vh;
+  margin: 2rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -923,4 +910,106 @@ body {
   .titleAnswar {
     margin-top: 40px; /* Adjusted margin for smaller screens */
   }
+}
+
+.image-map {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.map-marker-wrapper {
+  position: absolute;
+  top: 48%;
+  left: 52%;
+  background: transparent !important;
+  width: fit-content !important;
+  border: none;
+}
+.first-map-marker {
+  position: absolute;
+  top: 48%;
+  left: 56%;
+}
+
+.second-map-marker {
+  position: absolute;
+  top: 49%;
+  left: 62%;
+}
+
+.circle {
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle-inner {
+  background-color: #1d4ed8;
+  height: 1rem;
+  width: 1rem;
+  @media screen and (max-width: 800px) {
+    height: 0.4rem;
+    width: 0.4rem;
+  }
+}
+
+.circle-center {
+  background: #1d4ed880;
+  height: 1.4rem;
+  width: 1.4rem;
+  @media screen and (max-width: 800px) {
+    height: 0.6rem;
+    width: 0.6rem;
+  }
+}
+
+.circle-outer {
+  background: #1d4ed840;
+  height: 2rem;
+  width: 2rem;
+  @media screen and (max-width: 800px) {
+    height: 1rem;
+    width: 1rem;
+  }
+}
+
+.first-marker-tooltip {
+  background: #1d4ed8 !important;
+  opacity: 1 !important;
+  border-radius: 0 !important;
+  padding: 1rem !important;
+  h4 {
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+  }
+  span {
+    opacity: 50% !important;
+  }
+}
+
+.second-marker-tooltip {
+  background: #fff !important;
+  opacity: 1 !important;
+  border-radius: 0.6rem !important;
+  padding: 1rem !important;
+  img {
+    width: 2rem !important;
+  }
+  h4 {
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    color: #010314;
+  }
+  span {
+    color: #010314;
+    font-weight: 500 !important;
+  }
+}
+
+.boxes-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 2%;
+  flex-wrap: wrap;
 }
