@@ -2,7 +2,7 @@ import Link from 'next/link'
 import PhoneIcon from 'modules/icons/phoneIcon'
 import ClockBaseIcon from 'modules/icons/clockIcon'
 import ChatIcon from 'modules/icons/ChatIcon'
-import PinIcon from 'modules/icons/PinIcon'
+import PinIcon from 'modules/icons/pinIcon'
 const ContactCard = ({ icon, title, desc }) => {
   return (
     <div className="contactBox">

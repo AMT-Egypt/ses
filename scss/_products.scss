@@ -3,14 +3,24 @@
     padding-bottom: 90px;
     margin-bottom: 90px;
     position: relative;
-    min-height: 300vh;
+    // min-height: 300vh;
 
 
 
-
+    .flex{
+        display:flex;
+        @media(max-width:768px){
+            flex-direction:column-reverse;
+            gap: 30px;
+        }
+    }
 
     .content-side {
         position: relative;
+        width:50%;
+        @media(max-width:768px){
+            width: 100%;
+        }
 
         .content-section {
             &:not(:last-child) {
@@ -19,7 +29,7 @@
             }
 
             .inner-content {
-                padding-top: 40px;
+                padding-top: 10px;
                 top: 0;
 
                 .icon {
@@ -37,9 +47,114 @@
                     color: white;
                 }
             }
+            .feature {
+                margin-top: 20px;
+
+                h3{
+                    color: white;
+                    margin-bottom: 15px;
+                }
+
+                .inter{
+                    padding: 15px 0px;
+                    display: flex;
+                    align-items: center;
+                    gap: 30px;
+                    color: white;
+                    border-bottom: 2px solid white;
+
+                    h4{
+                        color: #578DF5;
+                        font-size: 20px;
+                        margin-bottom: 15px;
+                    }
+                }
+                .real {
+                    padding-top: 30px;
+                }
+                .cust {
+                    padding-top: 30px;
+                    border-bottom: none;
+                }
+            }
+            .benefit{
+                margin-top: 10px;
+
+                h3{
+                    color:white;
+                    margin-bottom: 15px;
+                }
+                p {
+                    color:white;
+                }
+
+                div{
+                    display:flex;
+                    align-items: center;
+                    gap: 10px;
+                    margin-top: 10px;
+                    span{
+                        color: white;
+                    }
+                }
+            }
+            .use {
+
+                h3{
+                    color:white;
+                    margin:30px 0px;
+                }
+
+                .grand {
+                    .parent {
+                        display:flex;
+                        @media(max-width:992px){
+                            flex-direction: column;
+                        }
+                        .child{
+                            width:50%;
+                            @media(max-width:992px){
+                                width:100%;
+                            }
+                            border:2px solid white;
+                            padding: 15px;
+                            h4{
+                                color: #578DF5;
+                                font-size: 20px;
+                                margin-bottom: 10px;
+                            }
+                            p{
+                                color:white;
+                                margin: 0%;
+                            }
+                        }
+                    }
+                }
+            }
         }
 
 
+    }
+    .list{
+        width: 50%;
+        @media(max-width:768px){
+            width: 100%;
+        }
+
+        .ulList{
+            list-style-type: none;
+            padding:0px;
+            display:flex;
+            flex-direction:column;
+            gap: 10px;
+
+            .liText{
+                cursor: pointer;
+                padding:15px;
+                color:white;
+                background-color: rgba(255, 255, 255, 0.25);
+            }
+        }
     }
 
     .desc-side {

@@ -51,7 +51,7 @@ export default function SendUsMessageModule() {
         <div>
           <ShineHeadLine text={<span>Send Us Message</span>} />
           <p className="site-p">
-            Share your project goals or questions with our team of experts – we're here to listen
+            Share your project goals or questions with our team of experts – we&apos;re here to listen
             and partner with you on your digital journey.
           </p>
         </div>

@@ -12,7 +12,7 @@ const Products: any = (props: any) => {
       </Head>
       <div className="page-content">
         <InnerPageHead title="Products" />
-        <ProductsModule />
+        <ProductsModule /> 
         <LetGetCloser />
       </div>
     </>
