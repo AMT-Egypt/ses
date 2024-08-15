@@ -1,9 +1,17 @@
-import Link from 'next/link'
-import PhoneIcon from 'modules/icons/phoneIcon'
-import ClockBaseIcon from 'modules/icons/clockIcon'
-import ChatIcon from 'modules/icons/ChatIcon'
-import PinIcon from 'modules/icons/pinIcon'
-const ContactCard = ({ icon, title, desc }) => {
+import Link from 'next/link';
+import PhoneIcon from 'modules/icons/phoneIcon';
+import ClockBaseIcon from 'modules/icons/clockIcon';
+import ChatIcon from 'modules/icons/ChatIcon';
+import PinIcon from 'modules/icons/pinIcon';
+import { useEffect, useState } from 'react';
+
+interface ContactCardProps {
+  icon: React.ReactNode;
+  title: string;
+  desc: React.ReactNode;
+}
+
+const ContactCard: React.FC<ContactCardProps> = ({ icon, title, desc }) => {
   return (
     <div className="contactBox">
       <div className="icon">{icon}</div>
@@ -12,9 +20,31 @@ const ContactCard = ({ icon, title, desc }) => {
       </div>
       <div className="desc">{desc}</div>
     </div>
-  )
-}
-export default function ContactUsBoxesModule(props: any) {
+  );
+};
+
+const ContactUsBoxesModule: React.FC = () => {
+  const [spaceState, setSpaceState] = useState<string>('');
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 425) {
+        setSpaceState(' ');
+      } else {
+        setSpaceState('');
+      }
+    };
+
+    // Initial check
+    handleResize();
+
+    // Attach event listener
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup event listener on component unmount
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <div className="diveDeeperModule container-fluid">
       <div className="boxes-wrapper">
@@ -23,7 +53,7 @@ export default function ContactUsBoxesModule(props: any) {
           title="Chat To Support"
           desc={
             <div className="desc-content">
-              <span>info@solidedgesolutions.net</span>
+              <span>info@solidedgeso{spaceState}lutions.net</span>
             </div>
           }
         />
@@ -62,5 +92,7 @@ export default function ContactUsBoxesModule(props: any) {
         />
       </div>
     </div>
-  )
-}
+  );
+};
+
+export default ContactUsBoxesModule;

@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import DrawerIcon from '../icons/drawerIcon'
 import Drawer from 'react-modern-drawer'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import 'react-modern-drawer/dist/index.css'
 import { useTranslation } from 'next-i18next'
 import { useRouter } from 'next/router'
@@ -26,9 +26,29 @@ export default function MainNav(props: any) {
     setIsOpen(false)
     return router.push({ pathname: route })
   }
-  let [navbarStyle,setNavbarDisplay] = useState("block")
+
+  const [showNav, setShowNav] = useState(true)
+
+  const handleScroll = () => {
+    if (window.scrollY === 0) {
+      setShowNav(false)
+    } else {
+      setShowNav(true)
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll)
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
   return (
     <>
+      {/* SLIDER */}
       <Drawer
         lockBackgroundScroll
         open={isOpen}
@@ -64,11 +84,14 @@ export default function MainNav(props: any) {
           </li>
         </ul>
       </Drawer>
+      {/* SLIDER */}
+
       <nav className="container-fluid nav">
         <div className="container lp-nav-container">
           <div className="row justify-content-between">
             <div className="col-6 col-md-4">
               <div className="logo-bar">
+                {/* Slider Icon */}
                 <div className="drawer-icon">
                   <button type="button" className="lp-nobtn" onClick={toggleDrawer}>
                     <DrawerIcon />
@@ -79,7 +102,8 @@ export default function MainNav(props: any) {
                 </div>
               </div>
             </div>
-            <div className="middle col-md-5">
+            {/* BIG NAV */}
+            <div id="big_nav" className="middle col-md-5">
               <ul className="nav-list">
                 <li>
                   <Link href="/"> Home </Link>
@@ -101,73 +125,78 @@ export default function MainNav(props: any) {
             <div className="col-6 col-md-3">
               <div className="nav-icons">
                 <ul>
-                  <li  className='btn_parent'>
+                  <li className="btn_parent">
                     {' '}
                     <Link href="/contact-us">
-                      <a className="btn-outline btn-hover">Contact Us</a>
+                      <a id="nav_btn" className="btn-outline btn-hover">
+                        Contact Us
+                      </a>
                     </Link>
                   </li>
                 </ul>
               </div>
             </div>
+            {/* BIG NAV */}
           </div>
         </div>
       </nav>
-      <motion.nav
-        style={{
-          opacity: opacity,
-          transform: transform,
-        }}
-        className="container-fluid nav secondary-nav "
-      >
-        <div className="container lp-nav-container">
-          <div className="row justify-content-between">
-            <div className="col-6 col-md-4">
-              <div className="logo-bar">
-                <div className="drawer-icon">
-                  <button type="button" className="lp-nobtn" onClick={toggleDrawer}>
-                    <DrawerIcon />
-                  </button>
-                </div>
-                <div className="logo">
-                  <LogoIcon />
+      {/* secound Nav */}
+      {showNav && (
+        <motion.nav
+          style={{
+            opacity: opacity,
+            transform: transform,
+          }}
+          className="container-fluid nav secondary-nav"
+        >
+          <div className="container lp-nav-container">
+            <div className="row justify-content-between">
+              <div className="col-6 col-md-4">
+                <div className="logo-bar">
+                  <div className="drawer-icon">
+                    <button type="button" className="lp-nobtn" onClick={toggleDrawer}>
+                      <DrawerIcon />
+                    </button>
+                  </div>
+                  <div className="logo">
+                    <LogoIcon />
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="middle col-md-5">
-              <ul className="nav-list">
-                <li>
-                  <Link href="/"> Home </Link>
-                </li>
-                <li>
-                  <Link href="/about"> About </Link>
-                </li>
-                <li>
-                  <Link href="/service"> Services </Link>
-                </li>
-                <li>
-                  <Link href="/product"> Products </Link>
-                </li>
-                <li>
-                  <Link href="/clients"> Clients </Link>
-                </li>
-              </ul>
-            </div>
-            <div className="col-6 col-md-3">
-              <div className="nav-icons">
-                <ul>
+              <div id="list" className="middle col-md-5">
+                <ul className="nav-list">
                   <li>
-                    {' '}
-                    <Link href="/contact-us">
-                      <a className="btn-outline btn-hover">Contact Us</a>
-                    </Link>
+                    <Link href="/"> Home </Link>
+                  </li>
+                  <li>
+                    <Link href="/about"> About </Link>
+                  </li>
+                  <li>
+                    <Link href="/service"> Services </Link>
+                  </li>
+                  <li>
+                    <Link href="/product"> Products </Link>
+                  </li>
+                  <li>
+                    <Link href="/clients"> Clients </Link>
                   </li>
                 </ul>
               </div>
+              <div className="col-6 col-md-3">
+                <div className="nav-icons">
+                  <ul>
+                    <li>
+                      <Link href="/contact-us">
+                        <a className="btn-outline btn-hover">Contact Us</a>
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </motion.nav>
+        </motion.nav>
+      )}
     </>
   )
 }

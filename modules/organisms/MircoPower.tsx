@@ -1,13 +1,13 @@
 import ThreeLinesIcon from '../icons/threeLines'
 import ShineHeadLine from 'modules/molcules/shineHeadline'
-import MicrosoftIcon from 'modules/icons/microsoftIcon'
 import Image from 'next/image';
 import TrueIcon from 'modules/icons/TrueIcon';
 import NumThreeIcon from 'modules/icons/NumThreeIcon';
 import NumTwoIcon from 'modules/icons/NumTwoIcon';
 import NumOneIcon from 'modules/icons/NumOneIcon';
+import { ReactNode } from 'react';
 
-const MircoPower = ({play}) => {
+const MircoPower = ({play,icons}:{play:string,icons:ReactNode}) => {
     return (
         <div style={{display:`${play==="1" ? 'block' : 'none'}`}} className="content-section" >
             <div className="sub-section">
@@ -16,7 +16,7 @@ const MircoPower = ({play}) => {
             <ShineHeadLine text={<span>Microsoft Power BI</span>} />
             <div className="inner-content">
                 <p>Transform your data into actionable insights with Microsoft Power BI. This powerful business intelligence tool allows you to easily visualize and analyze your data, uncovering hidden trends and patterns. Empower everyone in your organization to make data-driven decisions and achieve improved performance with Power BI.</p>
-                <div className="icon"><MicrosoftIcon /></div>
+                <div className="icon">{icons}</div>
                 <Image src={"/images/products/firstVariant.png"} width="1000" height="600" alt='image' />
             </div>
             <div className='feature'>

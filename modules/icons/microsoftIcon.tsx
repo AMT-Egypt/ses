@@ -21,7 +21,7 @@ export default function MicrosoftIcon() {
         fillRule="evenodd"
         clipRule="evenodd"
         d="M32.8266 20.7859H20.0658V34.1531H32.8266V20.7859ZM46.9166 20.7859H34.157V34.1531H46.9166V20.7859ZM20.0658 35.5488H32.8266V48.9153H20.0658V35.5488ZM46.9166 35.5488H34.157V48.9153H46.9166V35.5488Z"
-        fill="url(#paint0_linear_244_258)"
+        fill="#fff"
       />
       <defs>
         <linearGradient

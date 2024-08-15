@@ -26,15 +26,6 @@ export default function SidebarOrg(props: any) {
             <p>{t('TRENDING')}</p>
           </Link>
         </li>
-        {/* <li className="lp_category-list__item">
-        <p>Sale</p>
-        <ul className="lp_category-list__mega-menue">
-          <li>
-            Women <i className="fa fa-angle-right"></i>
-          </li>
-          <li>Men</li>
-        </ul>
-      </li> */}
       </ul>
     </div>
   )
