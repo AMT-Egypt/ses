@@ -82,6 +82,11 @@ export default function MainNav(props: any) {
               <p>Clients</p>
             </div>
           </li>
+          <li className="lp_category-list__item">
+            <div onClick={() => handleRouting('/Blogs')}>
+              <p>Blogs</p>
+            </div>
+          </li>
         </ul>
       </Drawer>
       {/* SLIDER */}
@@ -119,6 +124,9 @@ export default function MainNav(props: any) {
                 </li>
                 <li>
                   <Link href="/clients"> Clients </Link>
+                </li>
+                <li>
+                  <Link href="/Blogs"> Blogs </Link>
                 </li>
               </ul>
             </div>
@@ -179,6 +187,9 @@ export default function MainNav(props: any) {
                   </li>
                   <li>
                     <Link href="/clients"> Clients </Link>
+                  </li>
+                  <li>
+                    <Link href="/Blogs"> Blogs </Link>
                   </li>
                 </ul>
               </div>
