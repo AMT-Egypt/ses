@@ -39,13 +39,7 @@ const Blogs: React.FC = () => {
     <>
       <InnterPageHead title="Blogs" />
       <div
-        style={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          justifyContent: 'center',
-          padding: '16px',
-          minHeight: '60rem',
-        }}
+        
         className="blog_container"
       >
         {blogsData.slice(0, 11).map(category => (
