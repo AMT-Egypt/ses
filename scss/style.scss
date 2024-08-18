@@ -1047,6 +1047,9 @@ body {
 }
 
 ////////////////////////////
+///
+///
+
 .hero-animation {
   background-image: url(../public/images/heroBG.jpeg);
   background-repeat: no-repeat;
@@ -1062,7 +1065,18 @@ body {
   -o-transition: all ease-in-out 0.3s;
   animation: changeBackgroundSize 2s forwards 2s, moveHeroAnimation 3s forwards 4s;
   -webkit-animation: changeBackgroundSize 2s forwards 2s, moveHeroAnimation 3s forwards 4s;
+  border: none;
   position: fixed;
+}
+@media (max-width: 768px) {
+  .hero-animation {
+    position: absolute;
+    top: 0;
+    background-size: cover;
+    animation: changeBackgroundSizeMobile 2s forwards 2s, moveHeroAnimation 3s forwards 4s;
+    -webkit-animation: changeBackgroundSizeMobile 2s forwards 2s, moveHeroAnimation 3s forwards 4s;
+    height: 95vh;
+  }
 }
 
 .text-animation {

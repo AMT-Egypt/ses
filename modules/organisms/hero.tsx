@@ -11,11 +11,12 @@ export default function Hero() {
         position: 'relative',
         zIndex: 20,
         minHeight: '81vh',
+        width: '100%',
       }}
     >
       <div className="text-animation">
-        <p style={{ zIndex: '9999' }}>Explore the Possibilities of</p>
-        <p style={{ zIndex: '9999' }}>SOLID EDGE SOLUTIONS</p>
+        <p style={{ zIndex: '9999', textAlign: 'center' }}>Explore the Possibilities of</p>
+        <p style={{ zIndex: '9999', textAlign: 'center' }}>SOLID EDGE SOLUTIONS</p>
       </div>
     </div>
   )
