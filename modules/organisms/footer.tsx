@@ -6,8 +6,8 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 export default function FooterModule(props: any) {
-  let [emailDomain, setEmailDomain] = useState('solidedgesolutions.net')
-
+  let [emailDomain, setEmailDomain] = useState<any>('solidedgesolutions.net')
+  let [DateState, setDateState] = useState<any>('')
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768) {
@@ -15,6 +15,10 @@ export default function FooterModule(props: any) {
       } else {
         setEmailDomain('alternative-domain.net') // Change this to the appropriate domain if needed
       }
+      // handling Date Dynamic
+      let d = new Date()
+      let y = d.getFullYear()
+      setDateState(y)
     }
 
     // Set initial value
@@ -108,7 +112,7 @@ export default function FooterModule(props: any) {
       <div className="container">
         <div className="col-12">
           <div className="footer-rights">
-            <p>© 2024 All Rights Reserved For SES</p>
+            <p>© {DateState} All Rights Reserved For SES</p>
           </div>
         </div>
       </div>
