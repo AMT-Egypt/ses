@@ -3,15 +3,36 @@ import InstagramFooterIcon from 'modules/icons/instagramFooterIcon'
 import LinkedInFooterIcon from 'modules/icons/linkedInFooterIcon'
 import LogoIcon from 'modules/icons/logo'
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
 
 export default function FooterModule(props: any) {
+  let [emailDomain, setEmailDomain] = useState('solidedgesolutions.net')
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setEmailDomain('solidedgesolutions.net') // Default domain
+      } else {
+        setEmailDomain('alternative-domain.net') // Change this to the appropriate domain if needed
+      }
+    }
+
+    // Set initial value
+    handleResize()
+
+    // Add event listener
+    window.addEventListener('resize', handleResize)
+
+    // Clean up event listener on component unmount
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
   return (
     <footer className="footerModule container-fluid">
       <div className="container">
         <div className="row">
           <div className="col-md-7">
             <div className="footerLogo">
-              {' '}
               <LogoIcon />
             </div>
             <div className="footerDesc">
@@ -23,19 +44,19 @@ export default function FooterModule(props: any) {
             </div>
             <div className="socialMediaIcons">
               <Link href="/">
-                <>
-                  <FacbookFooterIcon />{' '}
-                </>
+                <a>
+                  <FacbookFooterIcon />
+                </a>
               </Link>
               <Link href="/">
-                <>
-                  <InstagramFooterIcon />{' '}
-                </>
+                <a>
+                  <InstagramFooterIcon />
+                </a>
               </Link>
               <Link href="/">
-                <>
-                  <LinkedInFooterIcon />{' '}
-                </>
+                <a>
+                  <LinkedInFooterIcon />
+                </a>
               </Link>
             </div>
           </div>
@@ -48,15 +69,12 @@ export default function FooterModule(props: any) {
                   </div>
                   <ul className="menuList">
                     <li>
-                      {' '}
                       <Link href="/">Home</Link>
                     </li>
                     <li>
-                      {' '}
                       <Link href="/product">Products</Link>
                     </li>
                     <li>
-                      {' '}
                       <Link href="/service">Services</Link>
                     </li>
                   </ul>
@@ -69,21 +87,15 @@ export default function FooterModule(props: any) {
                   </div>
                   <ul className="menuList">
                     <li>
-                      {' '}
-                      <span>info@solidedgesolutions.net</span>
+                      <span>info@{emailDomain}</span>
                     </li>
-
                     <li>
-                      {' '}
                       <span>+20 102 340 6947</span>
                     </li>
-
                     <li>
-                      {' '}
                       <span>+20 111 632 2237</span>
                     </li>
                     <li>
-                      {' '}
                       <span>+971 55 882 6291</span>
                     </li>
                   </ul>

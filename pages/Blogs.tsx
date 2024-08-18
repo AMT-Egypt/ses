@@ -1,7 +1,6 @@
 import { useRouter } from 'next/router'
 import InnterPageHead from '../modules/organisms/inner_page_head'
 import { blogsData } from '../public/data/blogs'
-
 const Blogs: React.FC = () => {
   const router = useRouter()
 
