@@ -40,7 +40,9 @@ main {
     grid-column-start: 2;
   }
 }
-
+.lp_category-list__item:nth-child(n) {
+  cursor: pointer;
+}
 .grid-header {
   display: flex;
 
