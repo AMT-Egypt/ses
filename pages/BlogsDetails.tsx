@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router'
 import { blogsData } from '../public/data/blogs'
+import InnterPageHead from '../modules/organisms/inner_page_head'
 
 const BlogsDetails: React.FC = () => {
   const router = useRouter()
@@ -18,13 +19,18 @@ const BlogsDetails: React.FC = () => {
 
   return (
     <div>
-      <h1>{category.title}</h1>
-      {category.blogs.map((blog, index) => (
-        <div key={index}>
-          <h2>{blog.title}</h2>
-          <p>{blog.description}</p>
+      <InnterPageHead title="Blogs Dtails" />
+      <div className='container mx-auto'>
+        <h2 className='text-white mb-4'>{category.title}</h2> 
+        <div className='w-full flex-column gap-2'>
+          {category.blogs.map((blog, index) => (
+            <div className='text-white' key={index}>
+              <h3>{blog.title}</h3>
+              <p>{blog.description}</p>
+            </div>
+          ))}
         </div>
-      ))}
+      </div>
     </div>
   )
 }
