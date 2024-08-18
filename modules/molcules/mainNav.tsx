@@ -47,7 +47,7 @@ export default function MainNav(props: any) {
     controls.start({
       y: 0,
       opacity: 1,
-      transition: { duration: 0.5 }
+      transition: { duration: 0.5 },
     })
 
     // Clean up the event listener on component unmount
@@ -112,7 +112,13 @@ export default function MainNav(props: any) {
                     <DrawerIcon />
                   </button>
                 </div>
-                <div className="logo">
+                <div
+                  style={{ cursor: 'pointer' }}
+                  onClick={() => {
+                    window.location.reload()
+                  }}
+                  className="logo"
+                >
                   <LogoIcon />
                 </div>
               </div>
