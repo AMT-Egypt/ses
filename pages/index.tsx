@@ -1,17 +1,31 @@
-import MethodologyModule from 'modules/organisms/methdology'
+import ClientsModule from 'modules/organisms/clients'
 import DiveDeeperModule from 'modules/organisms/diveDeeper'
 import GoalsModule from 'modules/organisms/goals'
 import HeroModule from 'modules/organisms/hero'
-import ProductsModule from 'modules/organisms/products'
-import ServicesModule from 'modules/organisms/services'
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import SureStepModule from 'modules/organisms/sureStepMeth'
+import LetGetCloser from 'modules/organisms/letGetCloser'
+import MethodologyModule from 'modules/organisms/methdology'
 import NewsModule from 'modules/organisms/news'
 import PartnersModule from 'modules/organisms/partners'
-import LetGetCloser from 'modules/organisms/letGetCloser'
-import ClientsModule from 'modules/organisms/clients'
+import ProductsModule from 'modules/organisms/products'
+import ServicesModule from 'modules/organisms/services'
+import SureStepModule from 'modules/organisms/sureStepMeth'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Head from 'next/head'
+import { useEffect } from 'react'
 const Home: any = (props: any) => {
+
+  useEffect(() => {
+    const serviceSection = document.getElementById('service-section')
+    setTimeout(() => {
+      if (window.scrollTo) {
+        window.scrollTo(0, 100)
+        setTimeout(() => {
+          serviceSection.scrollIntoView({ behavior: 'smooth' })
+        }, 3500)
+      }
+    }, 0)
+  }, [])
+
   return (
     <>
       <Head>

@@ -19,7 +19,7 @@ const ServiceItem = ({ icon, title, desc, className }) => {
 export default function ServicesModule() {
   return (
     <div className="container-fluid servicesModule">
-      <div className="serviceBackgroundImage"></div>
+      <div className="serviceBackgroundImage" id='service-section'></div>
       <div className="headContent">
         <div className="sub-section">
           <ThreeLinesIcon /> <p>Services</p>

@@ -1,22 +1,22 @@
-import App from 'next/app'
-import type { AppProps } from 'next/app'
 import { appWithTranslation } from 'next-i18next'
-import { useEffect, useRef, useState } from 'react'
-import Router, { useRouter } from 'next/router'
+import type { AppProps } from 'next/app'
+import App from 'next/app'
 import Head from 'next/head'
-import ReactModal from 'react-modal'
+import { useRouter } from 'next/router'
+import { useEffect, useRef, useState } from 'react'
 import { Cookies, CookiesProvider } from 'react-cookie'
+import ReactModal from 'react-modal'
 
-import 'rc-slider/assets/index.css'
-import 'rc-tooltip/assets/bootstrap.css'
-import 'rc-dropdown/assets/index.css'
-import 'react-datepicker/dist/react-datepicker.css'
-import '../scss/style.scss'
+import { useScroll } from 'framer-motion'
 import MainNav from 'modules/molcules/mainNav'
 import FooterModule from 'modules/organisms/footer'
-import { useScroll } from 'framer-motion'
+import 'rc-dropdown/assets/index.css'
+import 'rc-slider/assets/index.css'
+import 'rc-tooltip/assets/bootstrap.css'
+import 'react-datepicker/dist/react-datepicker.css'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import '../scss/style.scss'
 
 ReactModal.setAppElement('#__next')
 
@@ -35,19 +35,9 @@ function MyApp(props: IProps) {
   useEffect(() => {
     const dir = router.locale === 'ar' ? 'rtl' : 'ltr'
     const lang = router.locale === 'ar' ? 'ar' : 'en'
-
     document.querySelector('html')?.setAttribute('dir', dir)
     document.querySelector('html')?.setAttribute('lang', lang)
 
-    // Scroll to Y position 50 after initial render
-    setTimeout(() => {
-      if (window.scrollTo) {
-        window.scrollTo(0, 100)
-        setTimeout(() => {
-          window.scrollTo(0, 820)
-        }, 3500)
-      }
-    }, 0)
   }, [router.locale])
 
   const { scrollYProgress } = useScroll({
