@@ -19,13 +19,13 @@ const BlogsDetails: React.FC = () => {
 
   return (
     <div>
-      <InnterPageHead title="Blogs Dtails" />
+      <InnterPageHead title="Blogs Details" />
       <div className='container mx-auto'>
         <h2 className='text-white mb-4'>{category.title}</h2> 
         <div className='w-full flex-column gap-2'>
           {category.blogs.map((blog, index) => (
             <div className='text-white' key={index}>
-              <h3>{blog.title}</h3>
+              <h4>{blog.title}</h4>
               <p>{blog.description}</p>
             </div>
           ))}
