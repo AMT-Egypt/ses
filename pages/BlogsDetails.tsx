@@ -3,7 +3,8 @@ import { blogsData } from '../public/data/blogs'
 
 const BlogsDetails: React.FC = () => {
   const router = useRouter()
-  const { id } = router.query
+
+  const id = router.asPath.split("?")[1]
 
   // Convert id to number for comparison
   const blogId = Number(id)

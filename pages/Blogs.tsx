@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 // pages/blogs/index.tsx
 
 import { useRouter } from 'next/router'
@@ -9,7 +10,7 @@ const Blogs: React.FC = () => {
 
   const handleBlogClick = (id: number) => {
     // Navigate to the blog details page with the ID
-    router.push(`BlogDetails/${id}`)
+    router.push(`BlogsDetails?${id}`)
   }
 
   const containerStyle: React.CSSProperties = {

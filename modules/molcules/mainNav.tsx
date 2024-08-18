@@ -108,7 +108,7 @@ export default function MainNav(props: any) {
               </div>
             </div>
             {/* BIG NAV */}
-            <div id="big_nav" className="middle col-md-5">
+            <div id="big_nav" className="middle col-md-6">
               <ul className="nav-list">
                 <li>
                   <Link href="/"> Home </Link>
@@ -130,7 +130,7 @@ export default function MainNav(props: any) {
                 </li>
               </ul>
             </div>
-            <div className="col-6 col-md-3">
+            <div className="col-6 col-md-2">
               <div className="nav-icons">
                 <ul>
                   <li className="btn_parent">
@@ -171,7 +171,7 @@ export default function MainNav(props: any) {
                   </div>
                 </div>
               </div>
-              <div id="list" className="middle col-md-5">
+              <div id="list" className="middle col-md-6">
                 <ul className="nav-list">
                   <li>
                     <Link href="/"> Home </Link>
@@ -193,11 +193,11 @@ export default function MainNav(props: any) {
                   </li>
                 </ul>
               </div>
-              <div className="col-6 col-md-3">
+              <div className="col-6 col-md-2">
                 <div className="nav-icons">
                   <ul>
                     <li>
-                      <Link href="/contact-us">
+                      <Link href="/contact-us" className="btn-outline btn-hover">
                         <a className="btn-outline btn-hover">Contact Us</a>
                       </Link>
                     </li>
