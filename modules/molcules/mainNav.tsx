@@ -6,7 +6,8 @@ import 'react-modern-drawer/dist/index.css'
 import { useTranslation } from 'next-i18next'
 import { useRouter } from 'next/router'
 import LogoIcon from '../icons/logo'
-import { useTransform, motion } from 'framer-motion'
+import { useTransform, motion, useAnimation } from 'framer-motion'
+
 export default function MainNav(props: any) {
   const [isOpen, setIsOpen] = useState(false)
   const toggleDrawer = () => {
@@ -19,6 +20,8 @@ export default function MainNav(props: any) {
   const transform = useTransform(props.scrollProgress, (fn: any) =>
     fn >= 0.2 && props.movingUp ? 'translateY(-20px)' : 'translateY(-200%)',
   )
+
+  const controls = useAnimation()
 
   const { t } = useTranslation()
   const router = useRouter()
@@ -40,11 +43,18 @@ export default function MainNav(props: any) {
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
 
+    // Animate navbar into view on mount
+    controls.start({
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.5 }
+    })
+
     // Clean up the event listener on component unmount
     return () => {
       window.removeEventListener('scroll', handleScroll)
     }
-  }, [])
+  }, [controls])
 
   return (
     <>
@@ -151,9 +161,14 @@ export default function MainNav(props: any) {
       {/* secound Nav */}
       {showNav && (
         <motion.nav
+          animate={controls}
           style={{
+            position: 'fixed',
+            marginBottom: '2rem',
             opacity: opacity,
             transform: transform,
+            top: 0, // Ensure it starts from the top
+            width: '100%', // Ensure it spans the full width
           }}
           className="container-fluid nav secondary-nav"
         >

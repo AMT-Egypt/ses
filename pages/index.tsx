@@ -11,7 +11,6 @@ import PartnersModule from 'modules/organisms/partners'
 import LetGetCloser from 'modules/organisms/letGetCloser'
 import ClientsModule from 'modules/organisms/clients'
 import Head from 'next/head'
-
 const Home: any = (props: any) => {
   return (
     <>
@@ -20,8 +19,8 @@ const Home: any = (props: any) => {
       </Head>
       <div className="page-content">
         <HeroModule />
-        <DiveDeeperModule />
         <ServicesModule />
+        <DiveDeeperModule />
         <ProductsModule />
         <GoalsModule />
         <MethodologyModule />

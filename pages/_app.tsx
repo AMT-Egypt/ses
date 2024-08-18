@@ -38,6 +38,16 @@ function MyApp(props: IProps) {
 
     document.querySelector('html')?.setAttribute('dir', dir)
     document.querySelector('html')?.setAttribute('lang', lang)
+
+    // Scroll to Y position 50 after initial render
+    setTimeout(() => {
+      if (window.scrollTo) {
+        window.scrollTo(0, 100)
+        setTimeout(() => {
+          window.scrollTo(0, 820)
+        }, 3500)
+      }
+    }, 0)
   }, [router.locale])
 
   const { scrollYProgress } = useScroll({
