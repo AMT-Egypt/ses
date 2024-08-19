@@ -1,19 +1,18 @@
-import Link from 'next/link'
-import ThreeLinesIcon from '../icons/threeLines'
 import SwiperCore, { Autoplay } from 'swiper'
+import ThreeLinesIcon from '../icons/threeLines'
 SwiperCore.use([Autoplay])
 
 // Import Swiper styles
+import ShineHeadLine from 'modules/molcules/shineHeadline'
+import Image from 'next/image'
+import { Navigation } from 'swiper'
 import 'swiper/css'
 import 'swiper/css/free-mode'
 import 'swiper/css/navigation'
 import 'swiper/css/thumbs'
 import 'swiper/css/zoom'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { FreeMode, Navigation, Thumbs, Zoom } from 'swiper'
-import Image from 'next/image'
-import ShineHeadLine from 'modules/molcules/shineHeadline'
-import LogoTest from '../icons/Logo.svg'
+import LogoTest from '../../public/images/ses.png'
 const NewsCard = () => {
   return (
     <div className="news_card">
