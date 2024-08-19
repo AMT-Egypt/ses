@@ -1,6 +1,8 @@
+/* eslint-disable @next/next/no-img-element */
 import { useRouter } from 'next/router'
 import InnterPageHead from '../modules/organisms/inner_page_head'
 import { blogsData } from '../public/data/blogs'
+import Image from 'next/image'
 const Blogs: React.FC = () => {
   const router = useRouter()
 
@@ -48,10 +50,12 @@ const Blogs: React.FC = () => {
             style={containerStyle}
             onClick={() => handleBlogClick(category.id)}
           >
-            <img
-              src="https://i.pinimg.com/564x/45/7e/23/457e23ba64ca4d2d0c3d7d35dda1a356.jpg"
+            <Image
+              src="/images/ses.png"
               alt={category.title}
               style={imageStyle}
+              width={500}
+              height={250}
             />
             <div style={titleStyle}>{category.title}</div>
           </div>

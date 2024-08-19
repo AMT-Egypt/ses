@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
@@ -35,10 +36,12 @@ const BlogsDetails: React.FC = () => {
           </h2>
           <div className="w-full flex-column gap-2">
             {category.blogs.map((blog, index) => (
+              index !== category.blogs.length - 1 ?
               <div className="text-white" key={index}>
                 <h4 style={{ fontWeight: 'bold' }}>{blog.title}</h4>
                 <p>{blog.description}</p>
               </div>
+              :null
             ))}
           </div>
         </div>

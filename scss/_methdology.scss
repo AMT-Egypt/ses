@@ -1,3 +1,23 @@
+.methMapContainer::-webkit-scrollbar {
+  height: 2px !important;
+}
+
+.methMapContainer::-webkit-scrollbar-track {
+  background: #232E33;
+  border-radius: 3px;
+}
+
+.methMapContainer::-webkit-scrollbar-thumb {
+  background: #212529;
+  border-radius: 3px;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  .methMapContainer{
+    scrollbar-color: #212529
+      #232E33;
+  }
+}
 .methdologyModule {
   padding-top: 90px;
   padding-bottom: 90px;
@@ -5,9 +25,9 @@
   z-index: 1;
   height: 800px;
 
-  @media screen and (max-width: 500px) {
-    height: auto;
-  }
+  // @media screen and (max-width: 500px) {
+  //   height: 500px;
+  // }
 
   &:before {
     content: '';
@@ -63,6 +83,7 @@
 
     @media screen and (max-width: 500px) {
       justify-content: space-between;
+      height: 300px;
     }
 
     .methmap_item {
@@ -87,10 +108,10 @@
           align-items: center;
           justify-content: center;
           position: relative;
-          z-index: 1;
+          z-index: 10;
 
           @media screen and (max-width: 500px) {
-            display: none;
+            top:-70%;
           }
 
           &:before {
@@ -107,7 +128,7 @@
             z-index: -1;
 
             @media screen and (max-width: 500px) {
-              display: none;
+              display:none;
             }
           }
         }

@@ -10,7 +10,7 @@ import ShineHeadLine from 'modules/molcules/shineHeadline'
 
 const Myth_item = ({ icon, text, number, withRightBorder }) => {
   return (
-    <div className="methmap_item">
+    <div className="methmap_item ">
       <div className="meth_card">
         <div className="icon">{icon}</div>
         <div className="number">
